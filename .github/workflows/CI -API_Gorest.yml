@@ -16,11 +16,19 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      # Instalar Newman (CLI do Postman)
+      # Instalar Node.js e Newman
+      - name: Configurar ambiente
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
       - name: Instalar Newman
         run: npm install -g newman
 
+      # Exibir conteúdo do CSV (para debug)
+      - name: Exibir conteúdo do CSV
+        run: cat dados_csv.csv
+
       # Executar testes da API via Postman usando CSV como massa de dados
       - name: Testar API Gorest com massa de dados
-        run: newman run "API gorest.postman_collection.json" -e "API_gorest_env.json" \
-          --iteration-data "dados_csv.csv"
+        run: newman run "API gorest.postman_collection.json" -e "API_gorest_env.json" --iteration-data "dados_csv.csv"
