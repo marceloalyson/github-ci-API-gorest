@@ -1,4 +1,4 @@
-name: CI - API Gorest com Massa de Dados
+name: CI - API Gorest com Relatório
 
 on:
   push:
@@ -25,10 +25,20 @@ jobs:
       - name: Instalar Newman
         run: npm install -g newman
 
-      # Exibir conteúdo do CSV (para debug)
-      - name: Exibir conteúdo do CSV
-        run: cat dados_csv.csv
+      # Criar pasta para armazenar relatórios
+      - name: Criar pasta de relatórios
+        run: mkdir -p newman-reports
 
-      # Executar testes da API via Postman usando CSV como massa de dados
+      # Executar testes com Postman e salvar relatório
       - name: Testar API Gorest com massa de dados
-        run: newman run "API gorest.postman_collection.json" -e "API_gorest_env.json" --iteration-data "dados_csv.csv"
+        run: newman run "API gorest.postman_collection.json" -e "API_gorest_env.json" --iteration-data "dados_csv.csv" \
+          --reporters json, html \
+          --reporter-json-export newman-reports/report.json \
+          --reporter-html-export newman-reports/report.html
+
+      # Upload dos relatórios como artefatos
+      - name: Upload dos relatórios do Newman
+        uses: actions/upload-artifact@v4
+        with:
+          name: newman-reports
+          path: newman-reports/
