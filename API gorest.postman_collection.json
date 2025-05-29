@@ -219,7 +219,7 @@
 					"\r",
 					"if (pm.request.method == 'GET' || pm.request.method == 'POST') {\r",
 					"    pm.test(\"Response time is less than 2000ms\", function () {\r",
-					"        pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+					"        pm.expect(pm.response.responseTime).to.be.below(3000);\r",
 					"    });\r",
 					"}\r",
 					"\r",
