@@ -1,0 +1,26 @@
+name: CI - API Gorest com Massa de Dados
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  test-api:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout do código-fonte
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      # Instalar Newman (CLI do Postman)
+      - name: Instalar Newman
+        run: npm install -g newman
+
+      # Executar testes da API via Postman usando CSV como massa de dados
+      - name: Testar API Gorest com massa de dados
+        run: newman run "API gorest.postman_collection.json" -e "API_gorest_env.json" \
+          --iteration-data "dados_csv.csv"
