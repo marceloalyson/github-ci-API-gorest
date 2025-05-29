@@ -1,0 +1,27 @@
+{
+	"id": "53c48c22-f197-4ef1-9533-7b35fc8079e6",
+	"name": "Desenvolvimento",
+	"values": [
+		{
+			"key": "url_base",
+			"value": "https://gorest.co.in/public/v2/",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "id_user",
+			"value": "7912115",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "id_user_list",
+			"value": "111111",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2025-05-29T12:45:42.826Z",
+	"_postman_exported_using": "Postman/11.47.2"
+}
