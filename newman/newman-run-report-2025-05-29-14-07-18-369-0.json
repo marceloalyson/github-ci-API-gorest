@@ -1,0 +1,3949 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "aa0a2130-7dbd-4a6a-af6b-a5d1cc97f945",
+      "exporter_id": "45408288",
+      "collection_link": "https://marcelo-4353783.postman.co/workspace/Projeto-Final~390d69ac-f2ad-4652-a6c0-dbd7770e67c3/collection/45408288-aa0a2130-7dbd-4a6a-af6b-a5d1cc97f945?action=share&source=collection_link&creator=45408288"
+    },
+    "item": [
+      {
+        "id": "a46bac9a-5491-4f96-8006-76e7550d8a9d",
+        "name": "Users",
+        "item": [
+          {
+            "id": "a6c00add-ce58-4851-88a6-ea0f12ed3af2",
+            "name": "Criar novo User",
+            "item": [
+              {
+                "id": "74f6028d-67a9-48c2-93a0-29218bbed05c",
+                "name": "POST - Criar User",
+                "request": {
+                  "url": {
+                    "host": [
+                      "{{url_base}}users"
+                    ],
+                    "query": [],
+                    "variable": []
+                  },
+                  "method": "POST",
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"{{user_name}}\",\r\n    \"gender\": \"{{user_gender}}\",\r\n    \"email\": \"{{user_email}}\",\r\n    \"status\": \"{{user_status}}\"\r\n}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  }
+                },
+                "response": [],
+                "event": [
+                  {
+                    "listen": "prerequest",
+                    "script": {
+                      "id": "de8e4326-ac1a-4fa3-8ddc-6a1c1f2d4e20",
+                      "type": "text/javascript",
+                      "packages": {},
+                      "exec": [
+                        "pm.iterationData.get(\"user_name\")\r",
+                        "pm.iterationData.get(\"user_gender\")\r",
+                        "pm.iterationData.get(\"user_email\")\r",
+                        "pm.iterationData.get(\"user_status\")"
+                      ],
+                      "_lastExecutionId": "8b8fba81-fee5-4278-ae5c-679ec5b9a742"
+                    }
+                  }
+                ]
+              }
+            ],
+            "event": []
+          },
+          {
+            "id": "120867d4-398f-4df5-8611-4e463fdf99c4",
+            "name": "Listar User",
+            "item": [
+              {
+                "id": "9b285da5-615a-4074-8e10-612c82494b84",
+                "name": "GET - Todos Users",
+                "request": {
+                  "url": {
+                    "host": [
+                      "{{url_base}}users"
+                    ],
+                    "query": [],
+                    "variable": []
+                  },
+                  "method": "GET"
+                },
+                "response": [],
+                "event": [
+                  {
+                    "listen": "prerequest",
+                    "script": {
+                      "id": "cafc7615-e303-4091-b74e-48000cbe033c",
+                      "type": "text/javascript",
+                      "packages": {},
+                      "exec": [
+                        ""
+                      ],
+                      "_lastExecutionId": "5d15af1d-652e-4f1d-8877-abb314fe636f"
+                    }
+                  },
+                  {
+                    "listen": "test",
+                    "script": {
+                      "id": "7b20f4e8-9eb2-41c8-be49-a7e96602e5f6",
+                      "type": "text/javascript",
+                      "packages": {},
+                      "exec": [
+                        ""
+                      ],
+                      "_lastExecutionId": "24086cf3-8ba1-4c44-ba89-65f322a2369d"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "0e14588f-6542-4398-bea1-a25ebb97612f",
+                "name": "GET - Buscar user especifico",
+                "request": {
+                  "url": {
+                    "path": [
+                      "{{id_user}}"
+                    ],
+                    "host": [
+                      "{{url_base}}users"
+                    ],
+                    "query": [],
+                    "variable": []
+                  },
+                  "method": "GET"
+                },
+                "response": [],
+                "event": []
+              }
+            ],
+            "event": []
+          },
+          {
+            "id": "0cca79ac-34e5-4487-b774-6a878a3bdce6",
+            "name": "Editar User",
+            "item": [
+              {
+                "id": "96b6f800-243e-4999-8b11-44129a500bcc",
+                "name": "PUT-Editar User",
+                "request": {
+                  "url": {
+                    "path": [
+                      "{{id_user}}"
+                    ],
+                    "host": [
+                      "{{url_base}}users"
+                    ],
+                    "query": [],
+                    "variable": []
+                  },
+                  "method": "PUT",
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"{{user_name_edit}}\",\r\n    \"status\": \"{{user_status_edit}}\"\r\n}",
+                    "options": {
+                      "raw": {
+                        "language": "json"
+                      }
+                    }
+                  }
+                },
+                "response": [],
+                "event": [
+                  {
+                    "listen": "prerequest",
+                    "script": {
+                      "id": "b3696559-934e-4af2-9136-6b05569b966a",
+                      "type": "text/javascript",
+                      "packages": {},
+                      "exec": [
+                        "pm.iterationData.get(\"user_name_edit\")\r",
+                        "pm.iterationData.get(\"user_status_edit\")"
+                      ],
+                      "_lastExecutionId": "50fb2b1a-1955-4c83-84f4-435e1f0f9561"
+                    }
+                  }
+                ]
+              }
+            ],
+            "event": []
+          },
+          {
+            "id": "24eed2b6-41c1-42c8-8579-e5f5c949c45e",
+            "name": "Excluir User",
+            "item": [
+              {
+                "id": "7db37ae4-2b42-4a4c-9326-48c3be8cc2e2",
+                "name": "DELETE - Deletar User",
+                "request": {
+                  "url": {
+                    "path": [
+                      "{{id_user}}"
+                    ],
+                    "host": [
+                      "{{url_base}}users"
+                    ],
+                    "query": [],
+                    "variable": []
+                  },
+                  "method": "DELETE"
+                },
+                "response": [],
+                "event": []
+              }
+            ],
+            "event": []
+          }
+        ],
+        "event": []
+      }
+    ],
+    "auth": {
+      "type": "bearer",
+      "bearer": [
+        {
+          "type": "string",
+          "value": "f4488634bbfb0c42ccb786ab2d164f41b0b6f8820715f7be77f1f36f28a1c6a1",
+          "key": "token"
+        }
+      ]
+    },
+    "event": [
+      {
+        "listen": "prerequest",
+        "script": {
+          "id": "fce38f85-4a02-4c2a-ba5d-b01a3570ed3b",
+          "type": "text/javascript",
+          "packages": {},
+          "exec": [
+            ""
+          ],
+          "_lastExecutionId": "797546e0-753f-4cd4-b116-aba3b32b4136"
+        }
+      },
+      {
+        "listen": "test",
+        "script": {
+          "id": "863c4934-3c72-4597-92b3-dc11999d6803",
+          "type": "text/javascript",
+          "packages": {},
+          "exec": [
+            "if (pm.request.method == 'GET' || pm.request.method == 'PUT') {\r",
+            "    pm.test(\"Status code is 200\", function () {\r",
+            "        pm.response.to.have.status(200);\r",
+            "    });\r",
+            "\r",
+            "    pm.test(\"Status code name is OK\", function () {\r",
+            "        pm.response.to.have.status(\"OK\");\r",
+            "    });\r",
+            "}\r",
+            "\r",
+            "if (pm.request.method == 'GET' || pm.request.method == 'POST') {\r",
+            "    pm.test(\"Response time is less than 2000ms\", function () {\r",
+            "        pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+            "    });\r",
+            "}\r",
+            "\r",
+            "if (pm.request.method == 'POST') {\r",
+            "    pm.test(\"Successful POST request\", function () {\r",
+            "        pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+            "    });\r",
+            "\r",
+            "    pm.test(\"Status code name is Created\", function () {\r",
+            "        pm.response.to.have.status(\"Created\");\r",
+            "    });\r",
+            "\r",
+            "    if (pm.request.method == 'POST' && pm.info.requestName == 'POST - Criar User') {\r",
+            "        let responseJson = pm.response.json();\r",
+            "        if (responseJson && responseJson.id) {\r",
+            "            pm.environment.set(\"id_user\", responseJson.id);\r",
+            "        } else {\r",
+            "        console.log(\"Erro: ID do usuário não encontrado na resposta\");\r",
+            "    }\r",
+            "}\r",
+            "\r",
+            "}\r",
+            "\r",
+            "if (pm.request.method == 'DELETE') {\r",
+            "    pm.test(\"Status code name is No Content\", function () {\r",
+            "        pm.response.to.have.status(\"No Content\");\r",
+            "    });\r",
+            "\r",
+            "    pm.test(\"Status code is 204\", function () {\r",
+            "        pm.response.to.have.status(204);\r",
+            "    });\r",
+            "}\r",
+            ""
+          ],
+          "_lastExecutionId": "ecd410f4-7f5b-44cf-9493-abde7f4b252b"
+        }
+      }
+    ],
+    "variable": [],
+    "info": {
+      "_postman_id": "aa0a2130-7dbd-4a6a-af6b-a5d1cc97f945",
+      "name": "API gorest",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment",
+      "postman_exported_at": "2025-05-29T12:45:42.826Z",
+      "postman_exported_using": "Postman/11.47.2"
+    },
+    "id": "53c48c22-f197-4ef1-9533-7b35fc8079e6",
+    "name": "Desenvolvimento",
+    "values": [
+      {
+        "type": "any",
+        "value": "https://gorest.co.in/public/v2/",
+        "key": "url_base"
+      },
+      {
+        "type": "any",
+        "value": "7912115",
+        "key": "id_user"
+      },
+      {
+        "type": "any",
+        "value": "111111",
+        "key": "id_user_list"
+      }
+    ]
+  },
+  "globals": {
+    "id": "ea38831d-b078-46e3-bd96-5a13f0ab27e4",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 1,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 14,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 13,
+        "pending": 0,
+        "failed": 8
+      },
+      "testScripts": {
+        "total": 6,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 8,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 1150.6,
+      "responseMin": 783,
+      "responseMax": 1654,
+      "responseSd": 297.9910065757019,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1748527631981,
+      "completed": 1748527638357
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 5,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "ea2db018-bea0-4c99-8042-2c63245e9bc1",
+          "httpRequestId": "5c5938bb-e43a-494b-843e-6f6388f7c5ab"
+        },
+        "item": {
+          "id": "74f6028d-67a9-48c2-93a0-29218bbed05c",
+          "name": "POST - Criar User",
+          "request": {
+            "url": {
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"{{user_name}}\",\r\n    \"gender\": \"{{user_gender}}\",\r\n    \"email\": \"{{user_email}}\",\r\n    \"status\": \"{{user_status}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "de8e4326-ac1a-4fa3-8ddc-6a1c1f2d4e20",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.iterationData.get(\"user_name\")\r",
+                  "pm.iterationData.get(\"user_gender\")\r",
+                  "pm.iterationData.get(\"user_email\")\r",
+                  "pm.iterationData.get(\"user_status\")"
+                ],
+                "_lastExecutionId": "8b8fba81-fee5-4278-ae5c-679ec5b9a742"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "public",
+              "v2",
+              "users"
+            ],
+            "host": [
+              "gorest",
+              "co",
+              "in"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer f4488634bbfb0c42ccb786ab2d164f41b0b6f8820715f7be77f1f36f28a1c6a1",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "d8e072a0-11d3-4dbc-828a-e9e5f853b395",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "gorest.co.in",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "133",
+              "system": true
+            }
+          ],
+          "method": "POST",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\": \"{{user_name}}\",\r\n    \"gender\": \"{{user_gender}}\",\r\n    \"email\": \"{{user_email}}\",\r\n    \"status\": \"{{user_status}}\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "f4488634bbfb0c42ccb786ab2d164f41b0b6f8820715f7be77f1f36f28a1c6a1",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "0889d0e7-b6e6-40a6-b3d7-d1d1348e406f",
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 29 May 2025 14:07:16 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "157"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "key": "Feature-Policy",
+              "value": "camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; fullscreen 'self'"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-Ratelimit-Limit",
+              "value": "90"
+            },
+            {
+              "key": "X-Ratelimit-Remaining",
+              "value": "86"
+            },
+            {
+              "key": "X-Ratelimit-Reset",
+              "value": "1"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "fbb028d6-a43d-465a-9982-c401f321b256"
+            },
+            {
+              "key": "X-Runtime",
+              "value": "0.287730"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cf-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=aLX9%2BXSjmJ8xOnLlTaRVmh0VKQkHq8efBGEiB%2FYKyt2ewHH19FYdQXNA12bLFnxshC4pc1piWU2uZwrj3sM8HmeO81Pko7qTVNzF7yTCWZfZc%2FudjdQdCw%3D%3D\"}]}"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "94768e97dd10caee-GIG"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              123,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              34,
+              58,
+              34,
+              103,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              99,
+              97,
+              110,
+              39,
+              116,
+              32,
+              98,
+              101,
+              32,
+              98,
+              108,
+              97,
+              110,
+              107,
+              44,
+              32,
+              99,
+              97,
+              110,
+              32,
+              98,
+              101,
+              32,
+              109,
+              97,
+              108,
+              101,
+              32,
+              111,
+              102,
+              32,
+              102,
+              101,
+              109,
+              97,
+              108,
+              101,
+              34,
+              125,
+              44,
+              123,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              34,
+              58,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              99,
+              97,
+              110,
+              39,
+              116,
+              32,
+              98,
+              101,
+              32,
+              98,
+              108,
+              97,
+              110,
+              107,
+              34,
+              125,
+              44,
+              123,
+              34,
+              102,
+              105,
+              101,
+              108,
+              100,
+              34,
+              58,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              105,
+              115,
+              32,
+              105,
+              110,
+              118,
+              97,
+              108,
+              105,
+              100,
+              34,
+              125,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 1654,
+          "responseSize": 157
+        },
+        "id": "74f6028d-67a9-48c2-93a0-29218bbed05c",
+        "assertions": [
+          {
+            "assertion": "Response time is less than 2000ms",
+            "skipped": false
+          },
+          {
+            "assertion": "Successful POST request",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 1,
+              "test": "Successful POST request",
+              "message": "expected 422 to be one of [ 201, 202 ]",
+              "stack": "AssertionError: expected 422 to be one of [ 201, 202 ]\n   at Object.eval sandbox-script.js:2:1)"
+            }
+          },
+          {
+            "assertion": "Status code name is Created",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 2,
+              "test": "Status code name is Created",
+              "message": "expected response to have status reason 'Created' but got 'Unprocessable Entity'",
+              "stack": "AssertionError: expected response to have status reason 'Created' but got 'Unprocessable Entity'\n   at Object.eval sandbox-script.js:3:1)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "d5de36f0-9d7c-4715-b8fd-f28cab92d826",
+          "length": 5,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "5c5c364d-6416-4ac8-84f6-d39b98028f99"
+        },
+        "item": {
+          "id": "9b285da5-615a-4074-8e10-612c82494b84",
+          "name": "GET - Todos Users",
+          "request": {
+            "url": {
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "cafc7615-e303-4091-b74e-48000cbe033c",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "5d15af1d-652e-4f1d-8877-abb314fe636f"
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "7b20f4e8-9eb2-41c8-be49-a7e96602e5f6",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  ""
+                ],
+                "_lastExecutionId": "24086cf3-8ba1-4c44-ba89-65f322a2369d"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "public",
+              "v2",
+              "users"
+            ],
+            "host": [
+              "gorest",
+              "co",
+              "in"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer f4488634bbfb0c42ccb786ab2d164f41b0b6f8820715f7be77f1f36f28a1c6a1",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "fd7caae7-6af8-4660-98a6-9b1780759326",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "gorest.co.in",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "f4488634bbfb0c42ccb786ab2d164f41b0b6f8820715f7be77f1f36f28a1c6a1",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "e029f8ad-3147-4a9e-8081-b8542c56c54f",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 29 May 2025 14:07:17 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "max-age=0, private, must-revalidate"
+            },
+            {
+              "key": "Etag",
+              "value": "W/\"b0c063351a02216fe19f6b2ce72b9855\""
+            },
+            {
+              "key": "Feature-Policy",
+              "value": "camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; fullscreen 'self'"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Links-Current",
+              "value": "https://gorest.co.in/public/v2/users?page=1"
+            },
+            {
+              "key": "X-Links-Next",
+              "value": "https://gorest.co.in/public/v2/users?page=2"
+            },
+            {
+              "key": "X-Links-Previous",
+              "value": ""
+            },
+            {
+              "key": "X-Pagination-Limit",
+              "value": "10"
+            },
+            {
+              "key": "X-Pagination-Page",
+              "value": "1"
+            },
+            {
+              "key": "X-Pagination-Pages",
+              "value": "290"
+            },
+            {
+              "key": "X-Pagination-Total",
+              "value": "2899"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-Ratelimit-Limit",
+              "value": "90"
+            },
+            {
+              "key": "X-Ratelimit-Remaining",
+              "value": "89"
+            },
+            {
+              "key": "X-Ratelimit-Reset",
+              "value": "1"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "c0d63333-7670-4343-9470-683ee093f5f3"
+            },
+            {
+              "key": "X-Runtime",
+              "value": "0.307101"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cf-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=aVRJw2bsOjab1kmJDkOdS32IgjPFh6A3EdtN6%2BD6wcO6c8kdIWifavXF1M8ccbZiW62uRncFRxKgm0L6oAsddkFG3IFppvjGCWUQW%2F%2BacZRb7Dk1JjbeVg%3D%3D\"}]}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "94768ea15bb9caee-GIG"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              91,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              57,
+              50,
+              48,
+              55,
+              53,
+              53,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              80,
+              101,
+              100,
+              114,
+              111,
+              32,
+              80,
+              97,
+              117,
+              108,
+              111,
+              48,
+              48,
+              48,
+              51,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              112,
+              101,
+              100,
+              114,
+              111,
+              48,
+              48,
+              48,
+              51,
+              64,
+              116,
+              101,
+              115,
+              116,
+              103,
+              111,
+              46,
+              99,
+              111,
+              109,
+              46,
+              98,
+              114,
+              34,
+              44,
+              34,
+              103,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              109,
+              97,
+              108,
+              101,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              101,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              57,
+              50,
+              48,
+              53,
+              55,
+              51,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              74,
+              111,
+              195,
+              163,
+              111,
+              32,
+              67,
+              97,
+              114,
+              108,
+              111,
+              115,
+              49,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              99,
+              97,
+              114,
+              108,
+              111,
+              115,
+              46,
+              49,
+              50,
+              50,
+              49,
+              57,
+              48,
+              64,
+              116,
+              101,
+              115,
+              116,
+              103,
+              111,
+              46,
+              99,
+              111,
+              109,
+              34,
+              44,
+              34,
+              103,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              109,
+              97,
+              108,
+              101,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              101,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              57,
+              50,
+              48,
+              53,
+              52,
+              51,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              74,
+              111,
+              195,
+              163,
+              111,
+              32,
+              67,
+              97,
+              114,
+              108,
+              111,
+              115,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              99,
+              97,
+              114,
+              108,
+              111,
+              115,
+              46,
+              49,
+              50,
+              50,
+              49,
+              56,
+              64,
+              116,
+              101,
+              115,
+              116,
+              103,
+              111,
+              46,
+              99,
+              111,
+              109,
+              34,
+              44,
+              34,
+              103,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              109,
+              97,
+              108,
+              101,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              101,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              57,
+              50,
+              48,
+              53,
+              51,
+              53,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              80,
+              101,
+              100,
+              114,
+              111,
+              32,
+              80,
+              97,
+              117,
+              108,
+              111,
+              48,
+              48,
+              55,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              112,
+              101,
+              100,
+              114,
+              111,
+              48,
+              48,
+              55,
+              64,
+              116,
+              101,
+              115,
+              116,
+              103,
+              111,
+              46,
+              99,
+              111,
+              109,
+              46,
+              98,
+              114,
+              34,
+              44,
+              34,
+              103,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              109,
+              97,
+              108,
+              101,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              101,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              57,
+              50,
+              48,
+              53,
+              51,
+              52,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              80,
+              101,
+              100,
+              114,
+              111,
+              32,
+              80,
+              97,
+              117,
+              108,
+              111,
+              48,
+              48,
+              54,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              112,
+              101,
+              100,
+              114,
+              111,
+              48,
+              48,
+              54,
+              64,
+              116,
+              101,
+              115,
+              116,
+              103,
+              111,
+              46,
+              99,
+              111,
+              109,
+              46,
+              98,
+              114,
+              34,
+              44,
+              34,
+              103,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              109,
+              97,
+              108,
+              101,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              101,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              57,
+              50,
+              48,
+              53,
+              51,
+              51,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              80,
+              101,
+              100,
+              114,
+              111,
+              32,
+              80,
+              97,
+              117,
+              108,
+              111,
+              48,
+              48,
+              53,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              112,
+              101,
+              100,
+              114,
+              111,
+              48,
+              48,
+              53,
+              64,
+              116,
+              101,
+              115,
+              116,
+              103,
+              111,
+              46,
+              99,
+              111,
+              109,
+              46,
+              98,
+              114,
+              34,
+              44,
+              34,
+              103,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              109,
+              97,
+              108,
+              101,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              101,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              57,
+              50,
+              48,
+              53,
+              51,
+              50,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              80,
+              101,
+              100,
+              114,
+              111,
+              32,
+              80,
+              97,
+              117,
+              108,
+              111,
+              48,
+              48,
+              52,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              112,
+              101,
+              100,
+              114,
+              111,
+              48,
+              48,
+              52,
+              64,
+              116,
+              101,
+              115,
+              116,
+              103,
+              111,
+              46,
+              99,
+              111,
+              109,
+              46,
+              98,
+              114,
+              34,
+              44,
+              34,
+              103,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              109,
+              97,
+              108,
+              101,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              101,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              57,
+              50,
+              48,
+              53,
+              51,
+              49,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              80,
+              101,
+              100,
+              114,
+              111,
+              32,
+              80,
+              97,
+              117,
+              108,
+              111,
+              48,
+              48,
+              51,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              112,
+              101,
+              100,
+              114,
+              111,
+              48,
+              48,
+              51,
+              64,
+              116,
+              101,
+              115,
+              116,
+              103,
+              111,
+              46,
+              99,
+              111,
+              109,
+              46,
+              98,
+              114,
+              34,
+              44,
+              34,
+              103,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              109,
+              97,
+              108,
+              101,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              101,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              57,
+              50,
+              48,
+              53,
+              51,
+              48,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              80,
+              101,
+              100,
+              114,
+              111,
+              32,
+              80,
+              97,
+              117,
+              108,
+              111,
+              48,
+              48,
+              50,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              112,
+              101,
+              100,
+              114,
+              111,
+              48,
+              48,
+              50,
+              64,
+              116,
+              101,
+              115,
+              116,
+              103,
+              111,
+              46,
+              99,
+              111,
+              109,
+              46,
+              98,
+              114,
+              34,
+              44,
+              34,
+              103,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              109,
+              97,
+              108,
+              101,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              101,
+              34,
+              125,
+              44,
+              123,
+              34,
+              105,
+              100,
+              34,
+              58,
+              55,
+              57,
+              50,
+              48,
+              53,
+              50,
+              57,
+              44,
+              34,
+              110,
+              97,
+              109,
+              101,
+              34,
+              58,
+              34,
+              80,
+              101,
+              100,
+              114,
+              111,
+              32,
+              80,
+              97,
+              117,
+              108,
+              111,
+              48,
+              48,
+              49,
+              34,
+              44,
+              34,
+              101,
+              109,
+              97,
+              105,
+              108,
+              34,
+              58,
+              34,
+              112,
+              101,
+              100,
+              114,
+              111,
+              48,
+              48,
+              49,
+              64,
+              116,
+              101,
+              115,
+              116,
+              103,
+              111,
+              46,
+              99,
+              111,
+              109,
+              46,
+              98,
+              114,
+              34,
+              44,
+              34,
+              103,
+              101,
+              110,
+              100,
+              101,
+              114,
+              34,
+              58,
+              34,
+              109,
+              97,
+              108,
+              101,
+              34,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              34,
+              97,
+              99,
+              116,
+              105,
+              118,
+              101,
+              34,
+              125,
+              93
+            ]
+          },
+          "cookie": [],
+          "responseTime": 783,
+          "responseSize": 1063
+        },
+        "id": "9b285da5-615a-4074-8e10-612c82494b84",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Status code name is OK",
+            "skipped": false
+          },
+          {
+            "assertion": "Response time is less than 2000ms",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "7377add6-6aad-4b73-bef6-0c601d6060bc",
+          "length": 5,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "cdf134e5-3c80-4cf0-b3ac-17158bfa01a8"
+        },
+        "item": {
+          "id": "0e14588f-6542-4398-bea1-a25ebb97612f",
+          "name": "GET - Buscar user especifico",
+          "request": {
+            "url": {
+              "path": [
+                "{{id_user}}"
+              ],
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "public",
+              "v2",
+              "users",
+              "7912115"
+            ],
+            "host": [
+              "gorest",
+              "co",
+              "in"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer f4488634bbfb0c42ccb786ab2d164f41b0b6f8820715f7be77f1f36f28a1c6a1",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "cd88ff7f-aba0-4ca1-997b-5f1009edd99f",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "gorest.co.in",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET",
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "f4488634bbfb0c42ccb786ab2d164f41b0b6f8820715f7be77f1f36f28a1c6a1",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "e4ddab92-7996-4ab3-96d0-3a5f59d8a0de",
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 29 May 2025 14:07:18 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "key": "Feature-Policy",
+              "value": "camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; fullscreen 'self'"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-Ratelimit-Limit",
+              "value": "90"
+            },
+            {
+              "key": "X-Ratelimit-Remaining",
+              "value": "89"
+            },
+            {
+              "key": "X-Ratelimit-Reset",
+              "value": "1"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "b83b4f8f-ddd3-4556-928e-d428c0bdd4d3"
+            },
+            {
+              "key": "X-Runtime",
+              "value": "0.458472"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cf-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=zcKrtejWNDu6XweTlev6L0d1xW1m5lnVtt7Dx883SXohscHsEbUzWLtS0uATzonShPj9q2kul97EYs0T4yIN5sG8DfK0BwN9FFfmRUQo6eaAIt0kUPHZyg%3D%3D\"}]}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "94768ea6ffbbcaee-GIG"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              82,
+              101,
+              115,
+              111,
+              117,
+              114,
+              99,
+              101,
+              32,
+              110,
+              111,
+              116,
+              32,
+              102,
+              111,
+              117,
+              110,
+              100,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 929,
+          "responseSize": 32
+        },
+        "id": "0e14588f-6542-4398-bea1-a25ebb97612f",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status code is 200",
+              "message": "expected response to have status code 200 but got 404",
+              "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:3)"
+            }
+          },
+          {
+            "assertion": "Status code name is OK",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 1,
+              "test": "Status code name is OK",
+              "message": "expected response to have status reason 'OK' but got 'Not Found'",
+              "stack": "AssertionError: expected response to have status reason 'OK' but got 'Not Found'\n   at Object.eval sandbox-script.js:2:3)"
+            }
+          },
+          {
+            "assertion": "Response time is less than 2000ms",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "e39fc8d5-71ec-4ac9-9c12-6def712b5307",
+          "length": 5,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "a8719590-101b-4a64-8cc8-30ff47fcc63d"
+        },
+        "item": {
+          "id": "96b6f800-243e-4999-8b11-44129a500bcc",
+          "name": "PUT-Editar User",
+          "request": {
+            "url": {
+              "path": [
+                "{{id_user}}"
+              ],
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"{{user_name_edit}}\",\r\n    \"status\": \"{{user_status_edit}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "b3696559-934e-4af2-9136-6b05569b966a",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.iterationData.get(\"user_name_edit\")\r",
+                  "pm.iterationData.get(\"user_status_edit\")"
+                ],
+                "_lastExecutionId": "50fb2b1a-1955-4c83-84f4-435e1f0f9561"
+              }
+            }
+          ]
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "public",
+              "v2",
+              "users",
+              "7912115"
+            ],
+            "host": [
+              "gorest",
+              "co",
+              "in"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "system": true
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer f4488634bbfb0c42ccb786ab2d164f41b0b6f8820715f7be77f1f36f28a1c6a1",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "de7112ed-00eb-4902-b1c2-5348a0175f04",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "gorest.co.in",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Content-Length",
+              "value": "77",
+              "system": true
+            }
+          ],
+          "method": "PUT",
+          "body": {
+            "mode": "raw",
+            "raw": "{\r\n    \"name\": \"{{user_name_edit}}\",\r\n    \"status\": \"{{user_status_edit}}\"\r\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "f4488634bbfb0c42ccb786ab2d164f41b0b6f8820715f7be77f1f36f28a1c6a1",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "edb2891a-26f4-40b3-a68a-1b49bc7c9b98",
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 29 May 2025 14:07:19 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "key": "Feature-Policy",
+              "value": "camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; fullscreen 'self'"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-Ratelimit-Limit",
+              "value": "90"
+            },
+            {
+              "key": "X-Ratelimit-Remaining",
+              "value": "89"
+            },
+            {
+              "key": "X-Ratelimit-Reset",
+              "value": "1"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "595746c9-c1b7-4350-8eb3-70d827a289f1"
+            },
+            {
+              "key": "X-Runtime",
+              "value": "0.686303"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cf-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=PkFCbAHjNUJoP6Vk97BVnsjYyaxf1WMVir0x8kic%2BhSZRCOGrcuuyfa8NlpKX65CLEGMJ0u9sAtmvjTZd2QerzX3sW44VOwArpHI9gl8S0ge0P74cvLdOg%3D%3D\"}]}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "94768ead8c55caee-GIG"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              82,
+              101,
+              115,
+              111,
+              117,
+              114,
+              99,
+              101,
+              32,
+              110,
+              111,
+              116,
+              32,
+              102,
+              111,
+              117,
+              110,
+              100,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 1157,
+          "responseSize": 32
+        },
+        "id": "96b6f800-243e-4999-8b11-44129a500bcc",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status code is 200",
+              "message": "expected response to have status code 200 but got 404",
+              "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:4)"
+            }
+          },
+          {
+            "assertion": "Status code name is OK",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 1,
+              "test": "Status code name is OK",
+              "message": "expected response to have status reason 'OK' but got 'Not Found'",
+              "stack": "AssertionError: expected response to have status reason 'OK' but got 'Not Found'\n   at Object.eval sandbox-script.js:2:4)"
+            }
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "fc0167a8-dda4-4731-bb9d-98f6db8dc7d7",
+          "length": 5,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "7ee3fa20-a9f2-449b-bb2d-deea5145e97f"
+        },
+        "item": {
+          "id": "7db37ae4-2b42-4a4c-9326-48c3be8cc2e2",
+          "name": "DELETE - Deletar User",
+          "request": {
+            "url": {
+              "path": [
+                "{{id_user}}"
+              ],
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE"
+          },
+          "response": [],
+          "event": []
+        },
+        "request": {
+          "url": {
+            "protocol": "https",
+            "path": [
+              "public",
+              "v2",
+              "users",
+              "7912115"
+            ],
+            "host": [
+              "gorest",
+              "co",
+              "in"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer f4488634bbfb0c42ccb786ab2d164f41b0b6f8820715f7be77f1f36f28a1c6a1",
+              "system": true
+            },
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "0382597f-6300-4282-871f-c2531398789c",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "gorest.co.in",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "DELETE",
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "type": "string",
+                "value": "f4488634bbfb0c42ccb786ab2d164f41b0b6f8820715f7be77f1f36f28a1c6a1",
+                "key": "token"
+              }
+            ]
+          }
+        },
+        "response": {
+          "id": "880ea888-993e-46c6-8853-047620cdfd6f",
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Thu, 29 May 2025 14:07:21 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache"
+            },
+            {
+              "key": "Feature-Policy",
+              "value": "camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; fullscreen 'self'"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Download-Options",
+              "value": "noopen"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Permitted-Cross-Domain-Policies",
+              "value": "none"
+            },
+            {
+              "key": "X-Ratelimit-Limit",
+              "value": "90"
+            },
+            {
+              "key": "X-Ratelimit-Remaining",
+              "value": "89"
+            },
+            {
+              "key": "X-Ratelimit-Reset",
+              "value": "1"
+            },
+            {
+              "key": "X-Request-Id",
+              "value": "115261eb-5c5c-4d10-8a70-53ed658783bb"
+            },
+            {
+              "key": "X-Runtime",
+              "value": "0.743228"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cf-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=WkqaWExGKaPcEKTNUVn%2Bs1lF%2F85mk8HTxpPi3Kcrth9I%2FOtrED%2BBkpOFYSUkgM2UOLpx1k%2BeSWRlYDQWHmxdDGGjrHEf6iduycJqBpY9GRQZhQS6OKffEg%3D%3D\"}]}"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "94768eb539fdcaee-GIG"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              82,
+              101,
+              115,
+              111,
+              117,
+              114,
+              99,
+              101,
+              32,
+              110,
+              111,
+              116,
+              32,
+              102,
+              111,
+              117,
+              110,
+              100,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 1230,
+          "responseSize": 32
+        },
+        "id": "7db37ae4-2b42-4a4c-9326-48c3be8cc2e2",
+        "assertions": [
+          {
+            "assertion": "Status code name is No Content",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 0,
+              "test": "Status code name is No Content",
+              "message": "expected response to have status reason 'No Content' but got 'Not Found'",
+              "stack": "AssertionError: expected response to have status reason 'No Content' but got 'Not Found'\n   at Object.eval sandbox-script.js:1:5)"
+            }
+          },
+          {
+            "assertion": "Status code is 204",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 1,
+              "test": "Status code is 204",
+              "message": "expected response to have status code 204 but got 404",
+              "stack": "AssertionError: expected response to have status code 204 but got 404\n   at Object.eval sandbox-script.js:2:5)"
+            }
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 1316
+    },
+    "failures": [
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 1,
+          "test": "Successful POST request",
+          "message": "expected 422 to be one of [ 201, 202 ]",
+          "stack": "AssertionError: expected 422 to be one of [ 201, 202 ]\n   at Object.eval sandbox-script.js:2:1)",
+          "checksum": "1a9eb846bf02288b0b77703f319c9726",
+          "id": "69d74c56-3349-4cf5-939b-82098053e94a",
+          "timestamp": 1748527633744,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 2,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 1,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:1 in test-script",
+        "source": {
+          "id": "74f6028d-67a9-48c2-93a0-29218bbed05c",
+          "name": "POST - Criar User",
+          "request": {
+            "url": {
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"{{user_name}}\",\r\n    \"gender\": \"{{user_gender}}\",\r\n    \"email\": \"{{user_email}}\",\r\n    \"status\": \"{{user_status}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "de8e4326-ac1a-4fa3-8ddc-6a1c1f2d4e20",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.iterationData.get(\"user_name\")\r",
+                  "pm.iterationData.get(\"user_gender\")\r",
+                  "pm.iterationData.get(\"user_email\")\r",
+                  "pm.iterationData.get(\"user_status\")"
+                ],
+                "_lastExecutionId": "8b8fba81-fee5-4278-ae5c-679ec5b9a742"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "id": "a6c00add-ce58-4851-88a6-ea0f12ed3af2",
+          "name": "Criar novo User",
+          "item": [
+            {
+              "id": "74f6028d-67a9-48c2-93a0-29218bbed05c",
+              "name": "POST - Criar User",
+              "request": {
+                "url": {
+                  "host": [
+                    "{{url_base}}users"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"{{user_name}}\",\r\n    \"gender\": \"{{user_gender}}\",\r\n    \"email\": \"{{user_email}}\",\r\n    \"status\": \"{{user_status}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "de8e4326-ac1a-4fa3-8ddc-6a1c1f2d4e20",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.iterationData.get(\"user_name\")\r",
+                      "pm.iterationData.get(\"user_gender\")\r",
+                      "pm.iterationData.get(\"user_email\")\r",
+                      "pm.iterationData.get(\"user_status\")"
+                    ],
+                    "_lastExecutionId": "8b8fba81-fee5-4278-ae5c-679ec5b9a742"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": []
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 5,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "ea2db018-bea0-4c99-8042-2c63245e9bc1",
+          "httpRequestId": "5c5938bb-e43a-494b-843e-6f6388f7c5ab",
+          "scriptId": "863c4934-3c72-4597-92b3-dc11999d6803",
+          "execution": "c6a3a588-b1c3-467b-a94a-dbb5e72c1e4d"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 2,
+          "test": "Status code name is Created",
+          "message": "expected response to have status reason 'Created' but got 'Unprocessable Entity'",
+          "stack": "AssertionError: expected response to have status reason 'Created' but got 'Unprocessable Entity'\n   at Object.eval sandbox-script.js:3:1)",
+          "checksum": "3676a0fea9c30b51d90119bef9d27833",
+          "id": "bd53b208-d03c-481a-b3db-669a77a61328",
+          "timestamp": 1748527633757,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 3,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 1,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:2 in test-script",
+        "source": {
+          "id": "74f6028d-67a9-48c2-93a0-29218bbed05c",
+          "name": "POST - Criar User",
+          "request": {
+            "url": {
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"{{user_name}}\",\r\n    \"gender\": \"{{user_gender}}\",\r\n    \"email\": \"{{user_email}}\",\r\n    \"status\": \"{{user_status}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "de8e4326-ac1a-4fa3-8ddc-6a1c1f2d4e20",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.iterationData.get(\"user_name\")\r",
+                  "pm.iterationData.get(\"user_gender\")\r",
+                  "pm.iterationData.get(\"user_email\")\r",
+                  "pm.iterationData.get(\"user_status\")"
+                ],
+                "_lastExecutionId": "8b8fba81-fee5-4278-ae5c-679ec5b9a742"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "id": "a6c00add-ce58-4851-88a6-ea0f12ed3af2",
+          "name": "Criar novo User",
+          "item": [
+            {
+              "id": "74f6028d-67a9-48c2-93a0-29218bbed05c",
+              "name": "POST - Criar User",
+              "request": {
+                "url": {
+                  "host": [
+                    "{{url_base}}users"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"{{user_name}}\",\r\n    \"gender\": \"{{user_gender}}\",\r\n    \"email\": \"{{user_email}}\",\r\n    \"status\": \"{{user_status}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "de8e4326-ac1a-4fa3-8ddc-6a1c1f2d4e20",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.iterationData.get(\"user_name\")\r",
+                      "pm.iterationData.get(\"user_gender\")\r",
+                      "pm.iterationData.get(\"user_email\")\r",
+                      "pm.iterationData.get(\"user_status\")"
+                    ],
+                    "_lastExecutionId": "8b8fba81-fee5-4278-ae5c-679ec5b9a742"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": []
+        },
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 5,
+          "cycles": 1,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "ea2db018-bea0-4c99-8042-2c63245e9bc1",
+          "httpRequestId": "5c5938bb-e43a-494b-843e-6f6388f7c5ab",
+          "scriptId": "863c4934-3c72-4597-92b3-dc11999d6803",
+          "execution": "c6a3a588-b1c3-467b-a94a-dbb5e72c1e4d"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status code is 200",
+          "message": "expected response to have status code 200 but got 404",
+          "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:3)",
+          "checksum": "195341be17196c94d1afd7f73cce9151",
+          "id": "17ba092c-ccdb-465c-8459-33529ad780c0",
+          "timestamp": 1748527635713,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 3,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "0e14588f-6542-4398-bea1-a25ebb97612f",
+          "name": "GET - Buscar user especifico",
+          "request": {
+            "url": {
+              "path": [
+                "{{id_user}}"
+              ],
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": []
+        },
+        "parent": {
+          "id": "120867d4-398f-4df5-8611-4e463fdf99c4",
+          "name": "Listar User",
+          "item": [
+            {
+              "id": "9b285da5-615a-4074-8e10-612c82494b84",
+              "name": "GET - Todos Users",
+              "request": {
+                "url": {
+                  "host": [
+                    "{{url_base}}users"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET"
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "cafc7615-e303-4091-b74e-48000cbe033c",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      ""
+                    ],
+                    "_lastExecutionId": "5d15af1d-652e-4f1d-8877-abb314fe636f"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "7b20f4e8-9eb2-41c8-be49-a7e96602e5f6",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      ""
+                    ],
+                    "_lastExecutionId": "24086cf3-8ba1-4c44-ba89-65f322a2369d"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "0e14588f-6542-4398-bea1-a25ebb97612f",
+              "name": "GET - Buscar user especifico",
+              "request": {
+                "url": {
+                  "path": [
+                    "{{id_user}}"
+                  ],
+                  "host": [
+                    "{{url_base}}users"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET"
+              },
+              "response": [],
+              "event": []
+            }
+          ],
+          "event": []
+        },
+        "cursor": {
+          "ref": "7377add6-6aad-4b73-bef6-0c601d6060bc",
+          "length": 5,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "cdf134e5-3c80-4cf0-b3ac-17158bfa01a8",
+          "scriptId": "863c4934-3c72-4597-92b3-dc11999d6803",
+          "execution": "8d5870ca-e199-43df-a8af-ddcedf191599"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 1,
+          "test": "Status code name is OK",
+          "message": "expected response to have status reason 'OK' but got 'Not Found'",
+          "stack": "AssertionError: expected response to have status reason 'OK' but got 'Not Found'\n   at Object.eval sandbox-script.js:2:3)",
+          "checksum": "ae190be75b4ecf87b830b50f3db96d85",
+          "id": "84410c3a-4dd2-4d31-9553-c5e5b8dd4232",
+          "timestamp": 1748527635717,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 2,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 3,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:1 in test-script",
+        "source": {
+          "id": "0e14588f-6542-4398-bea1-a25ebb97612f",
+          "name": "GET - Buscar user especifico",
+          "request": {
+            "url": {
+              "path": [
+                "{{id_user}}"
+              ],
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": []
+        },
+        "parent": {
+          "id": "120867d4-398f-4df5-8611-4e463fdf99c4",
+          "name": "Listar User",
+          "item": [
+            {
+              "id": "9b285da5-615a-4074-8e10-612c82494b84",
+              "name": "GET - Todos Users",
+              "request": {
+                "url": {
+                  "host": [
+                    "{{url_base}}users"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET"
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "cafc7615-e303-4091-b74e-48000cbe033c",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      ""
+                    ],
+                    "_lastExecutionId": "5d15af1d-652e-4f1d-8877-abb314fe636f"
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "7b20f4e8-9eb2-41c8-be49-a7e96602e5f6",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      ""
+                    ],
+                    "_lastExecutionId": "24086cf3-8ba1-4c44-ba89-65f322a2369d"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "0e14588f-6542-4398-bea1-a25ebb97612f",
+              "name": "GET - Buscar user especifico",
+              "request": {
+                "url": {
+                  "path": [
+                    "{{id_user}}"
+                  ],
+                  "host": [
+                    "{{url_base}}users"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET"
+              },
+              "response": [],
+              "event": []
+            }
+          ],
+          "event": []
+        },
+        "cursor": {
+          "ref": "7377add6-6aad-4b73-bef6-0c601d6060bc",
+          "length": 5,
+          "cycles": 1,
+          "position": 2,
+          "iteration": 0,
+          "httpRequestId": "cdf134e5-3c80-4cf0-b3ac-17158bfa01a8",
+          "scriptId": "863c4934-3c72-4597-92b3-dc11999d6803",
+          "execution": "8d5870ca-e199-43df-a8af-ddcedf191599"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status code is 200",
+          "message": "expected response to have status code 200 but got 404",
+          "stack": "AssertionError: expected response to have status code 200 but got 404\n   at Object.eval sandbox-script.js:1:4)",
+          "checksum": "0c350660899225a8fa110255bb972775",
+          "id": "bcd783eb-5b22-4275-b63c-d42cf52737a8",
+          "timestamp": 1748527636989,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 4,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "96b6f800-243e-4999-8b11-44129a500bcc",
+          "name": "PUT-Editar User",
+          "request": {
+            "url": {
+              "path": [
+                "{{id_user}}"
+              ],
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"{{user_name_edit}}\",\r\n    \"status\": \"{{user_status_edit}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "b3696559-934e-4af2-9136-6b05569b966a",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.iterationData.get(\"user_name_edit\")\r",
+                  "pm.iterationData.get(\"user_status_edit\")"
+                ],
+                "_lastExecutionId": "50fb2b1a-1955-4c83-84f4-435e1f0f9561"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "id": "0cca79ac-34e5-4487-b774-6a878a3bdce6",
+          "name": "Editar User",
+          "item": [
+            {
+              "id": "96b6f800-243e-4999-8b11-44129a500bcc",
+              "name": "PUT-Editar User",
+              "request": {
+                "url": {
+                  "path": [
+                    "{{id_user}}"
+                  ],
+                  "host": [
+                    "{{url_base}}users"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"{{user_name_edit}}\",\r\n    \"status\": \"{{user_status_edit}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "b3696559-934e-4af2-9136-6b05569b966a",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.iterationData.get(\"user_name_edit\")\r",
+                      "pm.iterationData.get(\"user_status_edit\")"
+                    ],
+                    "_lastExecutionId": "50fb2b1a-1955-4c83-84f4-435e1f0f9561"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": []
+        },
+        "cursor": {
+          "ref": "e39fc8d5-71ec-4ac9-9c12-6def712b5307",
+          "length": 5,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "a8719590-101b-4a64-8cc8-30ff47fcc63d",
+          "scriptId": "863c4934-3c72-4597-92b3-dc11999d6803",
+          "execution": "6b23b954-3c99-4006-b892-25a310bb52b5"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 1,
+          "test": "Status code name is OK",
+          "message": "expected response to have status reason 'OK' but got 'Not Found'",
+          "stack": "AssertionError: expected response to have status reason 'OK' but got 'Not Found'\n   at Object.eval sandbox-script.js:2:4)",
+          "checksum": "7115c1c0270bd9de97bdf0722a0e9b7e",
+          "id": "852e4f2f-9702-4143-aa59-00a3eb6a2d59",
+          "timestamp": 1748527636991,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 2,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 4,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:1 in test-script",
+        "source": {
+          "id": "96b6f800-243e-4999-8b11-44129a500bcc",
+          "name": "PUT-Editar User",
+          "request": {
+            "url": {
+              "path": [
+                "{{id_user}}"
+              ],
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"{{user_name_edit}}\",\r\n    \"status\": \"{{user_status_edit}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "b3696559-934e-4af2-9136-6b05569b966a",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.iterationData.get(\"user_name_edit\")\r",
+                  "pm.iterationData.get(\"user_status_edit\")"
+                ],
+                "_lastExecutionId": "50fb2b1a-1955-4c83-84f4-435e1f0f9561"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "id": "0cca79ac-34e5-4487-b774-6a878a3bdce6",
+          "name": "Editar User",
+          "item": [
+            {
+              "id": "96b6f800-243e-4999-8b11-44129a500bcc",
+              "name": "PUT-Editar User",
+              "request": {
+                "url": {
+                  "path": [
+                    "{{id_user}}"
+                  ],
+                  "host": [
+                    "{{url_base}}users"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"{{user_name_edit}}\",\r\n    \"status\": \"{{user_status_edit}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "b3696559-934e-4af2-9136-6b05569b966a",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.iterationData.get(\"user_name_edit\")\r",
+                      "pm.iterationData.get(\"user_status_edit\")"
+                    ],
+                    "_lastExecutionId": "50fb2b1a-1955-4c83-84f4-435e1f0f9561"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": []
+        },
+        "cursor": {
+          "ref": "e39fc8d5-71ec-4ac9-9c12-6def712b5307",
+          "length": 5,
+          "cycles": 1,
+          "position": 3,
+          "iteration": 0,
+          "httpRequestId": "a8719590-101b-4a64-8cc8-30ff47fcc63d",
+          "scriptId": "863c4934-3c72-4597-92b3-dc11999d6803",
+          "execution": "6b23b954-3c99-4006-b892-25a310bb52b5"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 0,
+          "test": "Status code name is No Content",
+          "message": "expected response to have status reason 'No Content' but got 'Not Found'",
+          "stack": "AssertionError: expected response to have status reason 'No Content' but got 'Not Found'\n   at Object.eval sandbox-script.js:1:5)",
+          "checksum": "6b9e0b8e9702ea35e35d69934aacbbbe",
+          "id": "02e5da6e-a40c-47c5-a16a-10ce46119a25",
+          "timestamp": 1748527638309,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 1,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 5,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:0 in test-script",
+        "source": {
+          "id": "7db37ae4-2b42-4a4c-9326-48c3be8cc2e2",
+          "name": "DELETE - Deletar User",
+          "request": {
+            "url": {
+              "path": [
+                "{{id_user}}"
+              ],
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE"
+          },
+          "response": [],
+          "event": []
+        },
+        "parent": {
+          "id": "24eed2b6-41c1-42c8-8579-e5f5c949c45e",
+          "name": "Excluir User",
+          "item": [
+            {
+              "id": "7db37ae4-2b42-4a4c-9326-48c3be8cc2e2",
+              "name": "DELETE - Deletar User",
+              "request": {
+                "url": {
+                  "path": [
+                    "{{id_user}}"
+                  ],
+                  "host": [
+                    "{{url_base}}users"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE"
+              },
+              "response": [],
+              "event": []
+            }
+          ],
+          "event": []
+        },
+        "cursor": {
+          "ref": "fc0167a8-dda4-4731-bb9d-98f6db8dc7d7",
+          "length": 5,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "7ee3fa20-a9f2-449b-bb2d-deea5145e97f",
+          "scriptId": "863c4934-3c72-4597-92b3-dc11999d6803",
+          "execution": "ecd410f4-7f5b-44cf-9493-abde7f4b252b"
+        }
+      },
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 1,
+          "test": "Status code is 204",
+          "message": "expected response to have status code 204 but got 404",
+          "stack": "AssertionError: expected response to have status code 204 but got 404\n   at Object.eval sandbox-script.js:2:5)",
+          "checksum": "209744d2f3364b5249ebcda3ed8a9577",
+          "id": "d93ccd99-ef75-45a9-844d-274419f76f92",
+          "timestamp": 1748527638313,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 2,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 5,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:1 in test-script",
+        "source": {
+          "id": "7db37ae4-2b42-4a4c-9326-48c3be8cc2e2",
+          "name": "DELETE - Deletar User",
+          "request": {
+            "url": {
+              "path": [
+                "{{id_user}}"
+              ],
+              "host": [
+                "{{url_base}}users"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE"
+          },
+          "response": [],
+          "event": []
+        },
+        "parent": {
+          "id": "24eed2b6-41c1-42c8-8579-e5f5c949c45e",
+          "name": "Excluir User",
+          "item": [
+            {
+              "id": "7db37ae4-2b42-4a4c-9326-48c3be8cc2e2",
+              "name": "DELETE - Deletar User",
+              "request": {
+                "url": {
+                  "path": [
+                    "{{id_user}}"
+                  ],
+                  "host": [
+                    "{{url_base}}users"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "DELETE"
+              },
+              "response": [],
+              "event": []
+            }
+          ],
+          "event": []
+        },
+        "cursor": {
+          "ref": "fc0167a8-dda4-4731-bb9d-98f6db8dc7d7",
+          "length": 5,
+          "cycles": 1,
+          "position": 4,
+          "iteration": 0,
+          "httpRequestId": "7ee3fa20-a9f2-449b-bb2d-deea5145e97f",
+          "scriptId": "863c4934-3c72-4597-92b3-dc11999d6803",
+          "execution": "ecd410f4-7f5b-44cf-9493-abde7f4b252b"
+        }
+      }
+    ],
+    "error": null
+  }
+}
